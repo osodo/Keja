@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <div class="col-6 mx-auto col-md-6 order-md-2">
+    <form class="" action="register_caretaker" method="post">
+      {% csrf_token %}
+      {{ form.as_ul }}
+        <!--<div class="form-group">
+          <label for="id_name">Name:</label>
+          <input type="text" name="name" maxlength="100" class="form-control" required id="id_name" aria-describedby="emailHelp" placeholder='eg "Osodo Rodney"'>
+        </div>
+        <div class="form-group">
+          <label for="id_profile_bio">Profile bio</label>
+          <textarea name="profile_bio" class="form-control" id="id_profile_bio" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="id_profile_image">Profile photo:</label>
+          <input type="file" class="form-control-file" name="profile_image" id="id_profile_image" aria-describedby="fileHelp">
+          <small id="fileHelp" class="form-text text-muted">The profile photo which people will see.</small>
+        </div>
+        <div class="form-group">
+          <label for="id_email_address">Email address</label>
+          <input type="email" class="form-control" name="email_address" maxlength="254" required id="id_email_address" aria-describedby="emailHelp" placeholder='eg "rodneydav@gmail.com"'>
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group has-success">
+          <label class="form-control-label" for="id_phone_number">Phone number:</label>
+          <input type="number" name="phone_number" class="form-control is-valid" id="id_phone_number" placeholder='eg "0720137709 or +254720136609"'>
+          <div class="valid-feedback">Success!</div>
+        </div>
+        <div class="form-group">
+          <label for="id_place_from">Place from:</label>
+          <select class="custom-select" name="place_from" required id="id_place_from">
+            <option value="" selected>Open to pick up one place</option>
+            <option value="Juja">Juja</option>
+            <option value="Nairobi">Nairobi</option>
+            <option value="Kahawa">Kahawa</option>
+          </select>
+          <span class="helptext">Caretaker's place from</span>
+        </div>
+        <div class="form-group">
+          <label for="id_university_name">University name:</label>
+          <select class="custom-select" name="university_name" required id="id_university_name">
+            <option value="" selected>Open to pick your university</option>
+            <option value="JKUAT">Jommo Kenyatta University of Agriculture and technology</option>
+            <option value="UON">University of Nairobi</option>
+            <option value="KU">Kenyatta University</option>
+          </select>
+          <span class="helptext">Around which university is the house located</span>
+        </div>-->
+      <input type="submit" class="btn btn-secondary" name="submit" value="Register as caretaker">
+    </form>
+  </div>
+</div>
+
+
+{% endblock content %}

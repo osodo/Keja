@@ -1,0 +1,6 @@
+{% load i18n %}
+{% autoescape off %}
+{% blocktrans %}
+Keja email confirmation messages
+{% endblocktrans %}
+{% endautoescape %}

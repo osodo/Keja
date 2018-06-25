@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+{% load staticfiles %}
+{% block content %}
+<div class="container">
+  <!-- Jumbotron Header -->
+  <header class="jumbotron my-4">
+    <h1 class="display-3">A Warm Welcome!</h1>
+    <p class="lead">Lorem ipsum dolor sit amet,dit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+    <a href="" class="btn btn-primary btn-lg">Call to action!</a>
+  </header>
+<section class="post-content-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-12">
+              <div class="row text-center">
+                {% for house in houses %}
+                <div class="col-lg-3 col-md-6 mb-4">
+                  <div class="card">
+                    <img class="card-img-top" src="{{house.house_photo.url}}" alt="{{house.name}}">
+                    <div class="card-body">
+                      <h4 class="card-title">{{house.name}}</h4>
+                      <p class="card-text">{{house.description|truncatewords:10}}</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <a href="{% url "house" house.id %}" class="btn btn-primary">Find Out More!</a>
+                        </div>
+                        <small class="text-muted">{{ house.price}}</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+             </div>
+            <div class="col-lg-3  col-md-3 col-sm-12">
+                  <div class="well">
+                    <h2>Share love</h2>
+                    <ul class="list-inline">
+                        <li><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></li>
+                        <li><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></li>
+                    </ul>
+                </div>
+                <div class="well">
+                    <h2>About Author</h2>
+                    <img src="" class="img-rounded" />
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+                    <a href="#" class="btn btn-default">Read more</a>
+                </div>
+                <div class="list-group">
+                    <a class="list-group-item active" href="#"> <h4 class="list-group-item-heading">List group item heading</h4> <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p> </a>
+                    <a class="list-group-item" href="#"> <h4 class="list-group-item-heading">List group item heading</h4> <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p> </a>
+                    <a class="list-group-item" href="#"> <h4 class="list-group-item-heading">List group item heading</h4> <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p> </a> </div>
+            </div>
+        </div>
+      </div> <!-- /container -->
+    </section>
+  </div>
+  <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    {% if combined_list.object_list and combined_list.paginator.num_pages > 1 %}
+    {% if houses.has_previous %}
+    <li class="page-item"><a class="page-link" href="?page={{ houses.previous_page_number }}" tabindex="-1">Previous</a></li>
+    {% endif %}
+    {% for i in houses.paginator.page_range %}
+      {% if houses.number == i %}
+      <li class="page-item-active"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+      {% else %}
+      <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if houses.has_next %}
+    <li class="page-item"><a class="page-link" href="?page={{ houses.next_page_number }}">Next</a></li>
+    {% endif %}
+    {% endif %}
+  </ul>
+</nav>
+{% endblock content %}

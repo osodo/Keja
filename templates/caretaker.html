@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% load staticfiles %}
+{% block content %}
+<main role="main">
+  <div class="jumbotron">
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">{{ caretaker.name|capfirst }}</h1>
+      <blockquote class="blockquote text-center">
+        <p class="mb-0">{{ caretaker.profile_bio }}</p>
+      </blockquote>
+    </div>
+    <p>{{caretaker.place_from}}</p>
+    <p>{{caretaker.university_name }}</p>
+    {% if caretaker.profile_image %}
+    <img src="{{ caretaker.profile_image.url }}" alt="{{caretaker.name}}" width="610" height="330">
+    {% endif %}
+  </div>
+  </section>
+</main>
+{% endblock %}

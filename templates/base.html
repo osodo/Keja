@@ -1,0 +1,30 @@
+{% load static %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="where students meet there next homes after joining the university">
+    <meta name="author" content="keja developers">
+    <link rel="icon" href="{% static "/img/icon.ico" %}">
+    <title>Keja</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template -->
+    <link href="{% static "css/customstyles.css" %}" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <!-- Navigation -->
+    {% include "top_navbar.html" %}
+    <!-- Page Content -->
+    {% block content %}
+    {% endblock content %}
+    <!-- /.container -->
+    <!-- Footer -->
+    {% include "footer.html" %}
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static "js/jquery.js" %}"></script>
+    <script src="{% static "js/bootstrap.js" %}"></script>
+  </body>
+</html>
