@@ -13,6 +13,7 @@
 * cd { **folder name eg Keja** }
 * source bin/activate
 * git clone [GitHub Repository](https://github.com/osodo/Keja)
+* cd Keja
 * inside the airbnb/settings.py file remove the line **import secrets as s**
 * change the following lines
 	###### Email configurations
@@ -28,8 +29,8 @@
 	* EMAIL_HOST_PASSWORD = your email password
 	* EMAIL_PORT = "587"
 	* EMAIL_USE_TLS = True
+
 * then generate a 50 length key
-* cd Keja
 * pip install -r Requirements.txt
 * python manage.py makemigrations
 * python manage.py migrate
